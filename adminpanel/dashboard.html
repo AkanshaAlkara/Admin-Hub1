@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin Dashboard</title>
+<style>
+  /* CSS styling */
+  body { 
+    font-family: Arial, sans-serif; 
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+  }
+  
+  .dashboard { 
+    display: flex;
+    height: 100vh;
+  }
+  
+  .menu { 
+    width: 20%; 
+    background-color: #333;
+    color: #fff;
+    padding-top: 20px;
+  }
+  
+  .menu ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .menu li {
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .menu li:hover {
+    background-color: #555;
+  }
+  
+  .content { 
+    width: 80%; 
+    background-color: #fff;
+    padding: 20px;
+  }
+  
+  .content h2 {
+    margin-top: 0;
+  }
+</style>
+</head>
+<body>
+
+<div class="dashboard">
+  <div class="menu">
+    <!-- Sidebar menu items -->
+    <ul>
+      <li onclick="loadContent('dashboard')">Dashboard</li>
+      <li onclick="loadContent('customers')">Manage Customers</li>
+      <li onclick="loadContent('orders')">Manage Orders</li>
+      <li onclick="loadContent('shipping')">Manage Shipping</li>
+    </ul>
+  </div>
+  <div class="content">
+    <!-- Content will be loaded here -->
+    <h2>Welcome to the Admin Dashboard</h2>
+    <p>Select an option from the menu to get started.</p>
+  </div>
+</div>
+
+<script>
+  // JavaScript for loading content dynamically
+  function loadContent(contentType) {
+    var contentArea = document.querySelector('.content');
+    switch (contentType) {
+      case 'dashboard':
+        contentArea.innerHTML = '<h2>Dashboard</h2><p>This is the dashboard content.</p>';
+        break;
+      case 'customers':
+        contentArea.innerHTML = '<h2>Manage Customers</h2><p>This is the customers management content.</p>';
+        break;
+      case 'orders':
+        contentArea.innerHTML = '<h2>Manage Orders</h2><p>This is the orders management content.</p>';
+        break;
+      case 'shipping':
+        contentArea.innerHTML = '<h2>Manage Shipping</h2><p>This is the shipping management content.</p>';
+        break;
+      default:
+        contentArea.innerHTML = '<h2>Dashboard</h2><p>This is the dashboard content.</p>';
+    }
+  }
+</script>
+
+</body>
+</html>
